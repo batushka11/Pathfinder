@@ -1,4 +1,4 @@
-#include "../inc/pathfinder.h"
+#include "../inc/libmx.h"
 
 int mx_atoi(const char *str) {
 	long long result = 0;

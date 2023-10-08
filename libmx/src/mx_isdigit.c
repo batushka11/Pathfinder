@@ -1,4 +1,4 @@
-#include "../inc/pathfinder.h"
+#include "../inc/libmx.h"
 
 bool mx_isdigit(int c) {
 	if(c >= 48 && c <= 57) {

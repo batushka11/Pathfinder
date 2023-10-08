@@ -129,5 +129,16 @@ int mx_list_size(t_list *list);
 
 t_list *mx_sort_list(t_list *lst, bool(*cmp)(void*, void*));
 
+bool mx_isalpha(int c);
+
+int mx_atoi(const char *str);
+
+bool mx_isdigit(int c);
+
+int mx_file_size(int fd);
+
+void mx_printerr(const char *s);
+
 #endif
+
 
