@@ -25,6 +25,7 @@ int main(int argc, const char* argv[]) {
     char *arr = mx_file_to_str(argv[1]);
     mx_find_error_in_file(arr);
     check_validated_name_of_island(arr);
+    check_valid_sum(arr);
     mx_print_strarr(&arr, "\n");
 }
 
