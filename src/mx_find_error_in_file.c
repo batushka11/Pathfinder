@@ -6,6 +6,10 @@ void mx_find_error_in_file(char *arr){
                     mx_printerr("error: line 1 is not valid\n");
                     exit(0);
                 }
+                if(i>11){
+                    mx_printerr("error: line 1 is not valid\n");
+                    exit(0);
+                }
         }
         int counter_of_line = 0;
         int komma = 0;
@@ -50,7 +54,7 @@ void mx_find_error_in_file(char *arr){
             }
         }
 
-        counter_of_line = 1;
+        counter_of_line = 2;
 
         int size = 1;
 
@@ -59,10 +63,51 @@ void mx_find_error_in_file(char *arr){
         }
 
         while(arr[size]){
-            
+            while(arr[size] != '-'){
+                    if(!mx_isalpha(arr[size])){
+                        mx_printerr("error: line ");
+                        mx_printint(counter_of_line );
+                        mx_printerr(" is not valid\n");
+                        exit(0);
+                    }
+                    size++;
+            }
+            if(arr[size] == '-'){
+                size++;
+            }
+            while(arr[size] != ','){
+                if(!mx_isalpha(arr[size])){
+                        mx_printerr("error: line ");
+                        mx_printint(counter_of_line );
+                        mx_printerr(" is not valid\n");
+                        exit(0);
+                    }
+                    size++;
+            }
+            if(arr[size] == ','){
+                size++;
+            }
+            int check_num = size;
+            while(arr[size] != '\n'){
+                if(!mx_isdigit(arr[size])){
+                        mx_printerr("error: line ");
+                        mx_printint(counter_of_line);
+                        mx_printerr(" is not valid\n");
+                        exit(0);
+                    }
+                    size++;
+            }
+            if(size - check_num > 11){
+                mx_printerr("error: line ");
+                mx_printint(counter_of_line);
+                mx_printerr(" is not valid\n");
+                exit(0);
+            }
+            if(arr[size] == '\n'){
+                size++;
+                counter_of_line++;
+            }   
         }
-
-        mx_print_strarr(&arr, "\n");
 }
 
 
