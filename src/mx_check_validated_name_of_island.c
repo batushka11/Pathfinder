@@ -39,7 +39,7 @@ void check_validated_name_of_island(char *arr) {
 
         if (mx_strcmp(first, second) == 0) {
             mx_printerr("error: line ");
-            mx_printint(counter_of_line );
+            mx_printerr(mx_itoa(counter_of_line));
             mx_printerr(" is not valid\n");
             exit(0);
         }

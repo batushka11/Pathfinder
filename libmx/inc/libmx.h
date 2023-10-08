@@ -139,6 +139,8 @@ int mx_file_size(int fd);
 
 void mx_printerr(const char *s);
 
+int mx_char_index(char* str, char c);
+
 #endif
 
 

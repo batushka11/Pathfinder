@@ -20,7 +20,7 @@ void mx_find_error_in_file(char *arr){
                 if (counter_of_line > 1) {
                     if (komma != 1 || defis != 1) {
                             mx_printerr("error: line ");
-                            mx_printint(counter_of_line);
+                            mx_printerr(mx_itoa(counter_of_line));
                             mx_printerr(" is not valid\n");
                             exit(0);
                     }
@@ -35,7 +35,7 @@ void mx_find_error_in_file(char *arr){
         }
         if (counter_of_line == 0 || komma != 0 || defis != 0) {
             mx_printerr("error: line ");
-            mx_printint(counter_of_line);
+            mx_printerr(mx_itoa(counter_of_line));
             mx_printerr(" is not valid\n");
             exit(0);
         }
@@ -48,7 +48,7 @@ void mx_find_error_in_file(char *arr){
             }
             if(mx_isalpha(arr[i]) == 0 && mx_isdigit(arr[i]) == 0 && arr[i] != '-' && arr[i] != ',' && arr[i] != '\n'){
                 mx_printerr("error: line ");
-                mx_printint(counter_of_line + 1);
+                mx_printerr(mx_itoa(counter_of_line + 1));
                 mx_printerr(" is not valid\n");
                 exit(0);
             }
@@ -66,7 +66,7 @@ void mx_find_error_in_file(char *arr){
             while(arr[size] != '-'){
                     if(!mx_isalpha(arr[size])){
                         mx_printerr("error: line ");
-                        mx_printint(counter_of_line );
+                        mx_printerr(mx_itoa(counter_of_line));
                         mx_printerr(" is not valid\n");
                         exit(0);
                     }
@@ -78,7 +78,7 @@ void mx_find_error_in_file(char *arr){
             while(arr[size] != ','){
                 if(!mx_isalpha(arr[size])){
                         mx_printerr("error: line ");
-                        mx_printint(counter_of_line );
+                        mx_printerr(mx_itoa(counter_of_line));
                         mx_printerr(" is not valid\n");
                         exit(0);
                     }
@@ -91,7 +91,7 @@ void mx_find_error_in_file(char *arr){
             while(arr[size] != '\n'){
                 if(!mx_isdigit(arr[size])){
                         mx_printerr("error: line ");
-                        mx_printint(counter_of_line);
+                        mx_printerr(mx_itoa(counter_of_line));
                         mx_printerr(" is not valid\n");
                         exit(0);
                     }
@@ -99,7 +99,7 @@ void mx_find_error_in_file(char *arr){
             }
             if(size - check_num > 11){
                 mx_printerr("error: line ");
-                mx_printint(counter_of_line);
+                mx_printerr(mx_itoa(counter_of_line));
                 mx_printerr(" is not valid\n");
                 exit(0);
             }
