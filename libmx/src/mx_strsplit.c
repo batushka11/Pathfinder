@@ -3,7 +3,8 @@
 char **mx_strsplit(char const *s, char c) {
       int i = 0;
       int start;
-      char **result = (char**)mx_strnew(mx_count_words(s, c));
+      int size = mx_count_words(s, c);
+      char **result = (char**)mx_strnew((size + 1) * sizeof(char*));
       
       while(s[i] == c) {
          if(s[i] == '\0') {

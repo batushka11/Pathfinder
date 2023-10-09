@@ -27,6 +27,7 @@ int main(int argc, const char* argv[]) {
     check_validated_name_of_island(arr);
     check_valid_sum(arr);
     check_validated_name_of_island_pair(arr);
+    check_validated_name_of_island_pairs(arr);
     mx_print_strarr(&arr, "\n");
 }
 
