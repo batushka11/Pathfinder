@@ -4,7 +4,7 @@ struct Island {
     char name[1024];
 };
 
-void check_validated_name_of_island_pairs(char *arr) {
+void count_unique_islands(char *arr) {
     char** lines = mx_strsplit(arr, '\n');
     int total_unique_islands = 0;
 
