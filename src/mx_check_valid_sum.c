@@ -1,6 +1,6 @@
 #include "../inc/pathfinder.h"
 
-void check_valid_sum(char *arr){
+void check_valid_sum(const char *arr){
     char** lines = mx_strsplit(arr, '\n');
     long sum = 0;
     

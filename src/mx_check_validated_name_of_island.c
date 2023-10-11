@@ -18,7 +18,7 @@ void split_string(const char *str, char *first, char *second) {
     second[j] = '\0';
 }
 
-void check_validated_name_of_island(char *arr) {
+void check_validated_name_of_island(const char *arr) {
     int counter_of_line = 1;
     int i = 0;
 

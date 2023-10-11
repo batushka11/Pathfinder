@@ -4,7 +4,7 @@ struct Island {
     char name[1024];
 };
 
-void count_unique_islands(char *arr) {
+int count_unique_islands(const char *arr){
     char** lines = mx_strsplit(arr, '\n');
     int total_unique_islands = 0;
 
@@ -55,7 +55,10 @@ void count_unique_islands(char *arr) {
         mx_printerr("error: invalid number of islands\n");
         exit(1);
     }
+    
+    return total_unique_islands;
 }
+
 
 
 
