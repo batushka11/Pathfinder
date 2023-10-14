@@ -37,9 +37,9 @@ int main(int argc, const char* argv[]) {
     bridges *bridge_arr = (bridges*)malloc(sizeof(bridges)*(count_bridge));
     mx_create_char_bridges(arr,bridge_arr,count_bridge);
     char **str_of_isl = NULL;
-    str_of_isl = getUniqueIslands(bridge_arr, count_bridge);
+    str_of_isl = mx_get_unique_islands(bridge_arr, count_bridge);
     for (int i = 0; i < count_of_island; i++) {
-    printf("Уникальный остров %d: %s\n", i + 1, str_of_isl[i]);
+        printf("Уникальный остров %d: %s\n", i + 1, str_of_isl[i]);
     }
     int **matrix = mx_create_adjacency_matrix(str_of_isl,count_of_island, bridge_arr, count_bridge);
     for(int i = 0; i < count_of_island; i++) {
@@ -48,6 +48,7 @@ int main(int argc, const char* argv[]) {
         }
         printf("\n");
     }
+    simplePathfindingAlgorithm(matrix,count_of_island,str_of_isl);
     for(int i = 0; i < count_of_island;i++ ){
         free(matrix[i]);
     }

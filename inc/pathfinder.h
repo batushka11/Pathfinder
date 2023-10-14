@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <limits.h>
 #include "../libmx/inc/libmx.h"
 
 typedef struct bridge{
@@ -20,7 +21,8 @@ int count_unique_islands(const char *arr);
 int **mx_create_adjacency_matrix(char *islands[], int num_islands, bridges bridge_array[], int num_bridges);
 int mx_count_of_bridge(const char *arr);
 void mx_create_char_bridges(const char *arr, bridges *bridge_array, int num_bridges);
-char** getUniqueIslands(bridges* bridgeArray, int numBridges);
+char** mx_get_unique_islands(bridges* bridgeArray, int numBridges);
+void simplePathfindingAlgorithm(int** matrix,int size,char** str_of_isl);
 
 #endif
 

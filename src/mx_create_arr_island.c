@@ -1,6 +1,6 @@
 #include "../inc/pathfinder.h"
 
-char** getUniqueIslands(bridges* bridgeArray, int numBridges) {
+char** mx_get_unique_islands(bridges* bridgeArray, int numBridges) {
     char** uniqueIslands = (char**)malloc(numBridges * 2 * sizeof(char*));
 
     int uniqueCount = 0;
