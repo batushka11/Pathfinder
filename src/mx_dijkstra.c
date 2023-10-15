@@ -3,14 +3,15 @@
 void printPath(int start, int end, int **matrix, int *distances, char **str_of_isl,int size) {
     int VERTICES = size;
     if (end == start) {
-        printf("%s", str_of_isl[end]);
+        mx_printstr(str_of_isl[end]);
     } else {
         for (int j = 0; j < VERTICES; ++j) {
             if (matrix[j][end]) {
                 int temp = distances[end] - matrix[j][end];
                 if (temp == distances[j]) {
                     printPath(start, j, matrix, distances, str_of_isl, VERTICES);
-                    printf(" -> %s", str_of_isl[end]);
+                    mx_printstr(" -> ");
+                    mx_printstr(str_of_isl[end]);
                     return;
                 }
             }
@@ -22,8 +23,8 @@ void simplePathfindingAlgorithm(int** matrix, int size, char** str_of_isl) {
     int VERTICES = size;
 
     for (int START = 0; START < VERTICES; START++) {
-        bool visited[VERTICES];
-        int distances[VERTICES];
+        int* distances = (int*)malloc(VERTICES * sizeof(int));
+        bool* visited = (bool*)malloc(VERTICES * sizeof(bool));
         int minimalWeight, minimalIndex;
 
         for (int i = 0; i < VERTICES; ++i) {
@@ -58,15 +59,24 @@ void simplePathfindingAlgorithm(int** matrix, int size, char** str_of_isl) {
             }
         } while (minimalIndex < INT_MAX);
 
-        for (int i = 0; i < VERTICES; ++i) {
-            if (distances[i] != INT_MAX && START != i) {
-            printf("Path: %s -> %s\n", str_of_isl[START], str_of_isl[i]);
-            printf("Route: ");
+        for (int i = START + 1; i < VERTICES; ++i) {
+            if (distances[i] != INT_MAX) {
+            mx_printstr("========================================\n");
+            mx_printstr("Path: ");
+            mx_printstr(str_of_isl[START]);
+            mx_printstr(" -> ");
+            mx_printstr(str_of_isl[i]);
+            mx_printchar('\n');
+            mx_printstr("Route: ");
             printPath(START, i, matrix, distances, str_of_isl, size);
-            printf("\nDistance: %d\n", distances[i]);
-            printf("========================================\n========================================\n");
+            mx_printstr("\nDistance: ");
+            mx_printint(distances[i]);
+            mx_printchar('\n');
+            mx_printstr("========================================\n");
             }
         }
+        free(distances);
+        free(visited);
     }
 }
 

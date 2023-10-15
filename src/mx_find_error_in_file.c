@@ -1,6 +1,7 @@
 #include "../inc/pathfinder.h"
 
 void mx_find_error_in_file(const char *arr){
+        char** lines = mx_strsplit(arr, '\n');
         for(int i = 0; arr[i] != '\n';i++){
                 if(mx_isdigit(arr[i]) == 0){
                     mx_printerr("error: line 1 is not valid\n");
@@ -10,6 +11,10 @@ void mx_find_error_in_file(const char *arr){
                     mx_printerr("error: line 1 is not valid\n");
                     exit(0);
                 }
+        }
+        if(mx_atoi(lines[0]) < 0){
+                mx_printerr("error: line 1 is not valid\n");
+                exit(0);
         }
         int counter_of_line = 0;
         int komma = 0;
