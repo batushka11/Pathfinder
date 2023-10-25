@@ -10,7 +10,7 @@ void *mx_realloc(void *ptr, size_t size){
     }
 
     void *arr = malloc(size);
-    mx_memcpy(arr,ptr,malloc_usable_size(ptr));
+    mx_memcpy(arr,ptr,malloc_size(ptr));
     free(ptr);
     ptr = arr;
     return ptr;

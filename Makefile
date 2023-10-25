@@ -1,6 +1,6 @@
 CC = clang
 CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
-LDFLAGS = -static -L./$(LIB_DIR) -l:$(LIB)
+LDFLAGS = $(LIB_DIR)/$(LIB)
 INCLUDES = -I$(INC_DIR) -I$(LIB_DIR)/$(INC_DIR)
 
 SRC_DIR = src
@@ -43,3 +43,5 @@ reinstall:
 	make clean
 	make uninstall
 	make all
+
+
