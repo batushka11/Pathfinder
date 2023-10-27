@@ -34,14 +34,19 @@ int main(int argc, const char* argv[]) {
     mx_create_char_bridges(arr,bridge_arr,count_bridge);
     char **str_of_isl = NULL;
     str_of_isl = mx_get_unique_islands(bridge_arr, count_bridge);
-    int **matrix = mx_create_adjacency_matrix(str_of_isl,count_of_island, bridge_arr, count_bridge);
-    simplePathfindingAlgorithm(matrix,count_of_island,str_of_isl);
+    int **matrix = mx_create_adj_matrix(str_of_isl,count_of_island, bridge_arr, count_bridge);
+    int **matrix1 = mx_create_adj_matrix(str_of_isl,count_of_island, bridge_arr, count_bridge);
+    mx_simple_pathfinding_algorithm(matrix1,count_of_island);
+    mx_pathfinder_output(matrix,matrix1,count_of_island,str_of_isl);
     for(int i = 0; i < count_of_island;i++ ){
         free(matrix[i]);
     }
     free(matrix);
     for(int i = 0; i < count_of_island;i++ ){
         free(str_of_isl[i]);
+    }
+    for(int i = 0; i < count_of_island;i++ ){
+        free(matrix1[i]);
     }
     free(str_of_isl);
     free(arr);

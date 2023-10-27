@@ -9,12 +9,14 @@ int mx_list_index_of(char *arr[], int size, const char *key) {
     return -1;
 }
 
-int **mx_create_adjacency_matrix(char *islands[], int num_islands, bridges bridge_array[], int num_bridges) {
+int **mx_create_adj_matrix(char *islands[], int num_islands, bridges bridge_array[], int num_bridges) {
     int size = num_islands;
     int **matrix = (int **)malloc(size * sizeof(int *));
     for (int i = 0; i < size; i++) {
         matrix[i] = (int *)malloc(size * sizeof(int));
-        mx_memset(matrix[i], 0, size * sizeof(int));
+        for(int j = 0; j < size;j++){
+            matrix[i][j] = 999;
+        }
     }
 
     for (int i = 0; i < num_bridges; i++) {
