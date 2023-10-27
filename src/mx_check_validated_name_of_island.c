@@ -1,6 +1,6 @@
 #include "../inc/pathfinder.h"
 
-void split_string(const char *str, char *first, char *second) {
+void mx_split_string(const char *str, char *first, char *second) {
     int i = 0;
     while (str[i] != '-' && str[i] != '\0') {
         first[i] = str[i];
@@ -18,7 +18,7 @@ void split_string(const char *str, char *first, char *second) {
     second[j] = '\0';
 }
 
-void check_validated_name_of_island(const char *arr) {
+void mx_check_validated_name_of_island(const char *arr) {
     int counter_of_line = 1;
     int i = 0;
 
@@ -35,7 +35,7 @@ void check_validated_name_of_island(const char *arr) {
         mx_strncpy(line, arr + i, line_end - i);
         line[line_end - i] = '\0';
 
-        split_string(line, first, second);
+        mx_split_string(line, first, second);
 
         if (mx_strcmp(first, second) == 0) {
             mx_printerr("error: line ");

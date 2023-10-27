@@ -1,6 +1,6 @@
 #include "../inc/pathfinder.h"
 
-void print_path(int **matrix, int *path, char **str_of_isl, int path_counter) {
+void mx_print_path(int **matrix, int *path, char **str_of_isl, int path_counter) {
     int sum_of_price = 0;
 
     mx_printstr("====================");
@@ -38,7 +38,7 @@ void print_path(int **matrix, int *path, char **str_of_isl, int path_counter) {
     mx_printstr("====================\n");
 }
 
-void find_and_print_paths(int **matrix, int **matrix1, int *path, char **str_of_isl, int path_counter, int size) {
+void mx_find_and_print_paths(int **matrix, int **matrix1, int *path, char **str_of_isl, int path_counter, int size) {
     int start = path[0];
     int end = path[path_counter];
 
@@ -47,7 +47,7 @@ void find_and_print_paths(int **matrix, int **matrix1, int *path, char **str_of_
             path_counter += 1;
             path[path_counter] = i;
 
-            find_and_print_paths(matrix, matrix1, path, str_of_isl, path_counter, size);
+            mx_find_and_print_paths(matrix, matrix1, path, str_of_isl, path_counter, size);
 
             path_counter -= 1;
         }
@@ -57,7 +57,7 @@ void find_and_print_paths(int **matrix, int **matrix1, int *path, char **str_of_
         return;
     }
 
-    print_path(matrix, path, str_of_isl, path_counter);
+    mx_print_path(matrix, path, str_of_isl, path_counter);
 }
 
 

@@ -1,6 +1,6 @@
 #include "../inc/pathfinder.h"
 
-void check_validated_name_of_island_pair(const char *arr){
+void mx_check_validated_name_of_island_pair(const char *arr){
     char** lines = mx_strsplit(arr, '\n');
     
     for(int i = 1 ;lines[i]; i++) {
