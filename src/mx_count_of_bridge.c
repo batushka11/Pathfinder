@@ -11,3 +11,5 @@ int mx_count_of_bridge(const char *arr){
     return counter;
 }
 
+
+

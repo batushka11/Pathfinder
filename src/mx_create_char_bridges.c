@@ -11,3 +11,6 @@ void mx_create_char_bridges(const char *arr, bridges *bridge_array, int num_brid
     }
 }
 
+
+
+

@@ -25,6 +25,7 @@ char** mx_get_unique_islands(bridges* bridgeArray, int numBridges);
 void mx_simple_pathfinding_algorithm(int** matrix,int size);
 void mx_pathfinder_output(int **start_weight, int **end_weight, int size, char **str_of_isl) ;
 void mx_find_and_print_paths(int **matrix, int **matrix1, int *path, char **str_of_isl ,int path_counter, int size);
+void mx_print_path(int **matrix, int *path, char **str_of_isl, int path_counter);
 
 #endif
 

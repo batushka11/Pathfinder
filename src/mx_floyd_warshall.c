@@ -20,3 +20,5 @@ void mx_simple_pathfinding_algorithm(int **matrix, int size) {
 }
 
 
+
+
