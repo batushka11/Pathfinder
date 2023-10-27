@@ -8,7 +8,7 @@ void mx_pathfinder_output(int **matrix, int **matrix1, int size, char **str_of_i
         for (int j = i + 1; j < size; j++) {
             path[1] = i;
             path[0] = j;
-            print_path(matrix, matrix1, path, str_of_isl, path_counter, size);
+            find_and_print_paths(matrix, matrix1, path, str_of_isl, path_counter, size);
         }
     }
 
