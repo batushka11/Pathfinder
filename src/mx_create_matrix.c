@@ -15,7 +15,7 @@ int **mx_create_adj_matrix(char *islands[], int num_islands, bridges bridge_arra
     for (int i = 0; i < size; i++) {
         matrix[i] = (int *)malloc(size * sizeof(int));
         for(int j = 0; j < size;j++){
-            matrix[i][j] = 999;
+            matrix[i][j] = 2147483647;
         }
     }
 
