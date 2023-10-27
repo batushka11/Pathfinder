@@ -10,6 +10,8 @@
 #include <fcntl.h>
 #include <malloc/malloc.h>
 
+int mx_find_index(char *arr[], int size, const char *c);
+
 void mx_printchar(char c);
 
 void mx_print_unicode(wchar_t c);
