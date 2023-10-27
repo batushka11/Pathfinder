@@ -17,7 +17,6 @@ void mx_print_path(int **matrix, int *path, char **str_of_isl, int path_counter)
             mx_printstr(" -> ");
         }
     }
-
     mx_printstr("\nDistance: ");
 
     for (int i = 1; i < path_counter; i++) {
