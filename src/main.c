@@ -24,10 +24,10 @@ int main(int argc, const char* argv[]) {
     
     char *arr = mx_file_to_str(argv[1]);
     mx_find_error_in_file(arr);
-    mx_check_validated_name_of_island(arr);
-    mx_check_valid_sum(arr);
-    mx_check_validated_name_of_island_pair(arr);
     int count_of_island = mx_count_unique_islands(arr);
+    mx_check_validated_name_of_island(arr);
+    mx_check_validated_name_of_island_pair(arr);
+    mx_check_valid_sum(arr);
     int count_bridge = mx_count_of_bridge(arr);
     bridges *bridge_arr = (bridges*)malloc(sizeof(bridges)*(count_bridge));
     mx_create_char_bridges(arr,bridge_arr,count_bridge);
