@@ -24,8 +24,8 @@ int main(int argc, const char* argv[]) {
     
     char *arr = mx_file_to_str(argv[1]);
     mx_find_error_in_file(arr);
-    int count_of_island = mx_count_unique_islands(arr);
     mx_check_validated_name_of_island(arr);
+    int count_of_island = mx_count_unique_islands(arr);
     mx_check_validated_name_of_island_pair(arr);
     mx_check_valid_sum(arr);
     int count_bridge = mx_count_of_bridge(arr);
